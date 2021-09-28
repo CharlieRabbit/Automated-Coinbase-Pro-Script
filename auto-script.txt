@@ -33,7 +33,7 @@ deposit_amount = 100.00
 Set True/False for each variable and set the amount of each to buy.
 The default will buy $10 of bitcoin and nothing else."""
 buys = {}
-buys['BTC-USD'] = {'buy': True, 'amount': 50.00}
+buys['BTC-USD'] = {'buy': True, 'amount': 30.00}
 buys['ETH-USD'] = {'buy': True, 'amount': 10.00}
 buys['SHIB-USD'] = {'buy': True, 'amount': 10.00}
 buys['QNT-USD'] = {'buy': True, 'amount': 10.00}
