@@ -34,11 +34,13 @@ Set True/False for each variable and set the amount of each to buy.
 The default will buy $10 of bitcoin and nothing else."""
 buys = {}
 buys['BTC-USD'] = {'buy': True, 'amount': 50.00}
+buys['ETH-USD'] = {'buy': True, 'amount': 10.00}
 buys['SHIB-USD'] = {'buy': True, 'amount': 10.00}
 buys['QNT-USD'] = {'buy': True, 'amount': 10.00}
 buys['LINK-USD'] = {'buy': True, 'amount': 10.00}
 buys['SOL-USD'] = {'buy': True, 'amount': 10.00}
-buys['ETH-USD'] = {'buy': True, 'amount': 10.00}
+buys['DOGE-USD'] = {'buy': True, 'amount': 10.00}
+buys['XLM-USD'] = {'buy': True, 'amount': 10.00}
 buys['LTC-USD'] = {'buy': False, 'amount': 0.00}
 
 """You can have the purchases you just made immediately withdrawn to your
@@ -46,6 +48,8 @@ own wallets. Set the True/False variable and input your wallet on the
 address line.  """
 withdraws = {}
 withdraws['BTC-USD'] = {'withdraw': False,
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+withdraws['ETH-USD'] = {'withdraw': False,
                         'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
 withdraws['SHIB-USD'] = {'withdraw': False,
                         'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
@@ -55,7 +59,9 @@ withdraws['LINK-USD'] = {'withdraw': False,
                         'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
 withdraws['SOL-USD'] = {'withdraw': False,
                         'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
-withdraws['ETH-USD'] = {'withdraw': False,
+withdraws['DOGE-USD'] = {'withdraw': False,
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+withdraws['XLM-USD'] = {'withdraw': False,
                         'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
 withdraws['LTC-USD'] = {'withdraw': False,
                         'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
@@ -91,11 +97,13 @@ def automated_purchase(event, context):
 
     # withdraw to wallets
     withdraws['BTC-USD']['base'] = 'BTC'
+    withdraws['ETH-USD']['base'] = 'ETH'
     withdraws['SHIB-USD']['base'] = 'SHIB'
     withdraws['QNT-USD']['base'] = 'QNT'
     withdraws['LINK-USD']['base'] = 'LINK'
     withdraws['SOL-USD']['base'] = 'SOL'
-    withdraws['ETH-USD']['base'] = 'ETH'
+    withdraws['DOGE-USD']['base'] = 'DOGE'
+    withdraws['XLM-USD']['base'] = 'XLM'
     withdraws['LTC-USD']['base'] = 'LTC'
 
     for key in withdraws.keys():
