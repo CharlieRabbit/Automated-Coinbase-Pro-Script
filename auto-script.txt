@@ -80,18 +80,14 @@ def automated_purchase(event, context):
                                         currency='USD',
                                         payment_method_id=funding_id)
         time.sleep(10)
-        print('dep_request: {}'.format(dep_request))
     # make purchases
     for key in buys.keys():
         if buys[key]['buy'] is True:
             order = cbpro_api.place_market_order(product_id=key,
                                                  side='buy',
                                                  funds=buys[key]['amount'])
-            time.sleep(2)
-            print('order: {}'.format(order))
-            time.sleep(2)
+            time.sleep(5)
             order_details = cbpro_api.get_order(order['id'])
-            print('order_details: {}'.format(order_details))
             qty = float(order_details['filled_size'])
             withdraws[key]['qty'] = qty
 
