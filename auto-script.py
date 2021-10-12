@@ -13,7 +13,7 @@ import time
 """ Paste your cbpro API keys into the below variables """
 cbpro_apikey = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
 cbpro_secret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-cbpro_passphrase = 'XXXXXXXXXX'
+cbpro_passphrase = 'your_passphrase'
 
 """ Paste your bank account id into the funding_id variable.
 Input the deposit amount that should be requested every time this function 
