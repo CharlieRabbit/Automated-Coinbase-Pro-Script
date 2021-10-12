@@ -40,8 +40,6 @@ buys['DOGE-USD'] = {'buy': True, 'amount': 10.00}
 buys['LINK-USD'] = {'buy': True, 'amount': 10.00}
 buys['SOL-USD'] = {'buy': True, 'amount': 10.00}
 buys['XLM-USD'] = {'buy': True, 'amount': 10.00}
-buys['MATIC-USD'] = {'buy': False, 'amount': 10.00}
-buys['REN-USD'] = {'buy': False, 'amount': 10.00}
 buys['LTC-USD'] = {'buy': False, 'amount': 0.00}
 
 """You can have the purchases you just made immediately withdrawn to your
