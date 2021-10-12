@@ -49,27 +49,32 @@ own wallets. Set the True/False variable and input your wallet on the
 address line.  """
 withdraws = {}
 withdraws['BTC-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'BTC'}
 withdraws['ETH-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'ETH'}
 withdraws['SHIB-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'SHIB'}
 withdraws['QNT-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'QNT'}
 withdraws['LINK-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'LINK'}
 withdraws['SOL-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'SOL'}
 withdraws['DOGE-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'DOGE'}
 withdraws['XLM-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
-withdraws['MATIC-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
-withdraws['REN-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'XLM'}
 withdraws['LTC-USD'] = {'withdraw': False,
-                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'}
+                        'address': 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+                        'base': 'LTC'}
 
 """ Don't modify anything under this line """
 cbpro_api = cbpro.AuthenticatedClient(cbpro_apikey,
@@ -98,19 +103,6 @@ def automated_purchase():
             print(order_details)
             qty = float(order_details['filled_size'])
             withdraws[key]['qty'] = qty
-
-    # withdraw to wallets
-    withdraws['BTC-USD']['base'] = 'BTC'
-    withdraws['ETH-USD']['base'] = 'ETH'
-    withdraws['SHIB-USD']['base'] = 'SHIB'
-    withdraws['QNT-USD']['base'] = 'QNT'
-    withdraws['LINK-USD']['base'] = 'LINK'
-    withdraws['SOL-USD']['base'] = 'SOL'
-    withdraws['DOGE-USD']['base'] = 'DOGE'
-    withdraws['XLM-USD']['base'] = 'XLM'
-    withdraws['MATIC-USD']['base'] = 'MATIC'
-    withdraws['REN-USD']['base'] = 'REN'
-    withdraws['LTC-USD']['base'] = 'LTC'
 
     for key in withdraws.keys():
         if withdraws[key]['withdraw'] is True:
